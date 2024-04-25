@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
- 
+
 import asyncio
 from random import uniform
+
 
 async def async_generator():
     for i in range(10):
