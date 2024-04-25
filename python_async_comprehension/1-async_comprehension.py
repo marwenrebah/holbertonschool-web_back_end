@@ -7,6 +7,6 @@ import asyncio
 from typing import List
 
 
-async def async_comprehension() -> List[int]:
+async def async_comprehension() -> List[float]:
     """Collect 10 random numbers using an async comprehension."""
     return [i async for i in aysnc_generator()]
