@@ -39,9 +39,10 @@ def index_range(page: int, page_size: int) -> tuple:
     return (start, end)
 
 
-def get_hyper(page: int, page_size: int, data: List[List]) -> dict:
+def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
     """Return a dictionary containing the following key-value pairs."""
-    total_pages = math.ceil(len(data) / page_size)
+    data = self.get_page(page, page_size)
+    total_pages = math.ceil(len(self.dataset()) / page_size)
     return {
         "page_size": len(data),
         "page": page,
