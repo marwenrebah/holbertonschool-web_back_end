@@ -23,7 +23,10 @@ class Server:
         return self.__dataset
 
     def index_range(self, page: int, page_size: int) -> tuple:
-        """Return a tuple of size two containing a start index and an end index."""
+        """
+        Return a tuple of size two containing a start
+        index and an end index.
+        """
         start = (page - 1) * page_size
         end = page * page_size
         return (start, end)
