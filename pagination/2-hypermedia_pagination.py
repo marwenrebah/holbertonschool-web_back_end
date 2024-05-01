@@ -31,25 +31,26 @@ class Server:
         start, end = index_range(page, page_size)
         return csv_data[start:end]
 
+    def index_range(page: int, page_size: int) -> tuple:
+        """
+        Return a tuple of size two containing a
+        start index and an end index.
+        """
+        start = (page - 1) * page_size
+        end = page * page_size
+        return (start, end)
 
-def index_range(page: int, page_size: int) -> tuple:
-    """Return a tuple of size two containing a start index and an end index."""
-    start = (page - 1) * page_size
-    end = page * page_size
-    return (start, end)
-
-
-def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
-    """Get the page of the dataset"""
-    csv_data = self.dataset()
-    assert isinstance(page, int) and page > 0
-    assert isinstance(page_size, int) and page_size > 0
-    start, end = index_range(page, page_size)
-    return {
-        "page_size": page_size,
-        "page": page,
-        "data": csv_data[start:end],
-        "next_page": page + 1 if end < len(csv_data) else None,
-        "prev_page": page - 1 if start > 0 else None,
-        "total_pages": math.ceil(len(csv_data) / page_size),
-    }
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Get the page of the dataset"""
+        csv_data = self.dataset()
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
+        start, end = index_range(page, page_size)
+        return {
+            "page_size": page_size,
+            "page": page,
+            "data": csv_data[start:end],
+            "next_page": page + 1 if end < len(csv_data) else None,
+            "prev_page": page - 1 if start > 0 else None,
+            "total_pages": math.ceil(len(csv_data) / page_size),
+        }
