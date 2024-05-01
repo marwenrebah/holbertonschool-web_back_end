@@ -2,7 +2,7 @@
 """ 1-simple_pagination """
 import csv
 import math
-from typing import List
+from typing import List, Dict
 
 
 class Server:
@@ -39,7 +39,7 @@ def index_range(page: int, page_size: int) -> tuple:
     return (start, end)
 
 
-def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
     """Return a dictionary containing the following key-value pairs."""
     data = self.get_page(page, page_size)
     total_pages = math.ceil(len(self.dataset()) / page_size)
