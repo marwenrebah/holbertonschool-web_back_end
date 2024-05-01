@@ -22,17 +22,16 @@ class Server:
 
         return self.__dataset
 
+    @staticmethod
+    def index_range(self, page: int, page_size: int) -> tuple:
+        """Return a tuple of size two containing a start index and an end index."""
+        start = (page - 1) * page_size
+        end = page * page_size
+        return (start, end)
+
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Get the page of the dataset"""
-        csv_data = self.dataset()
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-        start, end = index_range(page, page_size)
-        return csv_data[start:end]
-
-
-def index_range(page: int, page_size: int) -> tuple:
-    """Return a tuple of size two containing a start index and an end index."""
-    start = (page - 1) * page_size
-    end = page * page_size
-    return (start, end)
+        start, end = self.index_range(page, page_size)
+        return self.dataset()[start:end]
