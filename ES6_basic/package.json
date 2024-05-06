@@ -4,52 +4,16 @@
     "check-lint": "lint [0-9]*.js",
     "dev": "npx babel-node",
     "test": "jest",
-    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest",
-    "precommit": "lint-staged"
+    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.8.0",
     "@babel/preset-env": "^7.6.0",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
-    "@typescript-eslint/utils": "^7.8.0",
-    "eslint": "^7.32.0",
+    "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^28.5.0",
-    "jest": "^29.7.0",
-    "typescript": "^5.4.5"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "eslint --fix -c .eslintrc.js",
-      "git add"
-    ],
-    "*.ts": [
-      "tslint --fix -c tslint.json --force",
-      "prettier --write",
-      "git add"
-    ],
-    "*.vue": [
-      "stylelint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.css": [
-      "stylelint --fix",
-      "git add"
-    ],
-    "*.less": [
-      "stylelint --fix --syntax=less",
-      "git add"
-    ],
-    "*.scss": [
-      "stylelint --fix --syntax=scss",
-      "git add"
-    ]
+    "eslint-plugin-jest": "^22.17.0",
+    "jest": "^24.9.0"
   }
 }
