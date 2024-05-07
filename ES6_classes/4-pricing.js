@@ -2,12 +2,8 @@ import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
-    if (currency instanceof Currency) {
-      this._amount = amount;
-      this._currency = currency;
-    } else {
-      throw new Error('Invalid currency object');
-    }
+    this._amount = amount;
+    this._currency = currency;
   }
 
   get amount() {
@@ -23,11 +19,7 @@ export default class Pricing {
   }
 
   set currency(newCurrency) {
-    if (newCurrency instanceof Currency) {
-      this._currency = newCurrency;
-    } else {
-      throw new Error('Invalid currency object');
-    }
+    this._currency = newCurrency;
   }
 
   displayFullPrice() {
