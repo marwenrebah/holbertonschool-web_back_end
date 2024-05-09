@@ -4,13 +4,12 @@ This repository contains a collection of JavaScript utility functions for variou
 
 ## `taskFirst()`
 
-```javascript
 export function taskFirst() {
   const task = 'I prefer const when I can.';
   return task;
 }
 
-getLast()
+## `getLast()`
 export function getLast() {
   return ' is okay';
 }
