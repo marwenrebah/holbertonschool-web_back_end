@@ -1,54 +1,33 @@
-# 🛠️ JavaScript Utility Functions 🚀
+# :octocat: ES6 Basics
 
-This repository contains a collection of JavaScript utility functions for various tasks. Below is a brief overview of each function:
+In this project, we have developed a series of JavaScript utility functions aimed at performing various tasks efficiently. These functions cover a range of functionalities, from manipulating strings and arrays to handling objects and generating descriptive texts. Let's delve into each function and understand its purpose and implementation.
 
-## `taskFirst()`
+## :rocket: Features:
 
-```javascript
-export function taskFirst() {
-  const task = 'I prefer const when I can.';
-  return task;
-}
+- `taskFirst()`: Returns a string expressing a preference for using const whenever possible.
+- `getLast()`: Returns a string indicating that something is okay.
+- `taskNext()`: Constructs a string combining the preference expressed in taskFirst() with the statement from getLast().
+- `taskBlock(trueOrFalse)`: Returns an array containing boolean values based on the input argument.
+- `getNeighborhoodsList()`: Initializes an object with San Francisco neighborhoods and provides a method to add new neighborhoods.
+- `getSumOfHoods(initialNumber, expansion1989, expansion2019)`: Calculates the sum of the initial number and two optional expansion values.
+- `returnHowManyArguments(...args)`: Returns the number of arguments passed to the function.
+- `concatArrays(array1, array2, string)`: Concatenates two arrays and a string into a single array.
+- `getSanFranciscoDescription()`: Generates a descriptive text about the income, GDP, and GDP per capita of San Francisco in a specific year.
+- `getBudgetObject(income, gdp, capita)`: Constructs an object representing budget data with income, GDP, and capita values.
+- `getBudgetForCurrentYear(income, gdp, capita)`: Constructs an object representing budget data for the current year.
+- `getFullBudgetObject(income, gdp, capita)`: Extends the budget object with methods to format income in dollars and euros.
+- `appendToEachArrayValue(array, appendString)`: Appends a string to each value in an array.
+- `createEmployeesObject(departmentName, employees)`: Constructs an object with department name as key and employees as value.
+- `createReportObject(employeesList)`: Constructs a report object with all employees and a method to get the number of departments.
 
-export function getLast() {
-  return ' is okay';
-}
+## :computer: Usage:
 
-export function taskNext() {
-  let combination = 'But sometimes let';
-  combination += getLast();
+These utility functions can be imported into any JavaScript project to perform specific tasks efficiently. Simply import the desired function(s) and call them as needed within your code.
 
-  return combination;
-}
+## :computer: Authors:
 
-export default function taskBlock(trueOrFalse) {
-  const task = false;
-  const task2 = true;
+🚀 Marwen Rebah<br>
+📧 Email: 6863@holbertonstudents.com<br>
+👻 Github: [https://github.com/marwenrebah](https://github.com/marwenrebah)<br>
 
-  if (trueOrFalse) {
-    // eslint-disable-next-line no-unused-vars, no-shadow
-    const task = true;
-    // eslint-disable-next-line no-unused-vars, no-shadow
-    const task2 = false;
-  }
 
-  return [task, task2];
-}
-
-export default function getNeighborhoodsList() {
-  this.sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
-
-  const self = this;
-  this.addNeighborhood = (newNeighborhood) => {
-    self.sanFranciscoNeighborhoods.push(newNeighborhood);
-    return self.sanFranciscoNeighborhoods;
-  };
-}
-
-export default function getSumOfHoods(initialNumber, expansion1989 = 89, expansion2019 = 19) {
-  return initialNumber + expansion1989 + expansion2019;
-}
-
-export default function returnHowManyArguments(...args) {
-  return args.length;
-}
