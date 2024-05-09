@@ -1,4 +1,4 @@
-# :octocat: ES6 Basics
+# 📋 ES6 Basics
 
 In this project, we have developed a series of JavaScript utility functions aimed at performing various tasks efficiently. These functions cover a range of functionalities, from manipulating strings and arrays to handling objects and generating descriptive texts. Let's delve into each function and understand its purpose and implementation.
 
@@ -24,7 +24,7 @@ In this project, we have developed a series of JavaScript utility functions aime
 
 These utility functions can be imported into any JavaScript project to perform specific tasks efficiently. Simply import the desired function(s) and call them as needed within your code.
 
-## :computer: Authors:
+## 👥 Authors:
 
 🚀 Marwen Rebah<br>
 📧 Email: 6863@holbertonstudents.com<br>
