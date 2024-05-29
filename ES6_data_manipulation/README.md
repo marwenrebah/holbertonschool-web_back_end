@@ -137,23 +137,6 @@ export default function updateUniqueItems(map) {
 }
 ```
 
-## 📂 Directory Structure
-
-ES6_data_manipulation/
-│
-├── getListStudents.js
-├── getListStudentIds.js
-├── getStudentsByLocation.js
-├── getStudentIdsSum.js
-├── createInt8TypedArray.js
-├── setFromArray.js
-├── hasValuesFromArray.js
-├── cleanSet.js
-├── groceriesList.js
-└── updateUniqueItems.js
-├── README.md
-└── package.json
-
 ## 👥 Author
 🚀 Marwen Rebah<br>
 📧 Email: 6863@holbertonstudents.com<br>
