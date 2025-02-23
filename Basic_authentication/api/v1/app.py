@@ -44,15 +44,13 @@ def access(error) -> str:
 @app.before_request
 def before_request():
     """before_request function"""
-    excluded_paths = [
-        '/api/v1/status/',
-        '/api/v1/unauthorized/',
-        '/api/v1/forbidden/'
-    ]
-    exist = auth.require_auth(request.path, excluded_paths)
+    exist = auth.require_auth(
+        request.path, ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/'])
     authorization_header = auth.authorization_header(request)
     if authorization_header is None:
         abort(401)
+    else:
+        abort(200)
     current_user = auth.current_user(request)
     if current_user is None:
         abort(403)
