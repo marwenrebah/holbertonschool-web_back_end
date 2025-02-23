@@ -27,11 +27,11 @@ class BasicAuth (Auth):
         base64_authorization_header"""
 
         if (base64_authorization_header is None or
-                (type(base64_authorization_header) != str)):
+                (type(base64_authorization_header) is not str)):
             return None
         try:
             decodeBytes = base64.b64decode(base64_authorization_header)
             decodedStr = decodeBytes.decode("utf-8")
             return decodedStr
-        except ValueError :
+        except ValueError:
             return None
