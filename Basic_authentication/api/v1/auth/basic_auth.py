@@ -6,33 +6,34 @@ import re
 import base64
 
 
-class BasicAuth (Auth):
+class BasicAuth(Auth):
     """BasicAuth class"""
 
-    def extract_base64_authorization_header(self,
-                                            authorization_header: str) -> str:
+    def extract_base64_authorization_header(self, authorization_header: str) -> str:
         """extract_base64_authorization_header that returns the Base64
         part of the Authorization header for a Basic Authentication"""
 
-        if authorization_header is None or (not isinstance(
-                authorization_header, str)):
+        if authorization_header is None or not isinstance(authorization_header, str):
             return None
-        if authorization_header.startswith("Basic ") is False:
+        if not authorization_header.startswith("Basic "):
             return None
-        Base64 = re.split(' ', authorization_header)
-        return Base64[1]
+        base64_part = re.split(" ", authorization_header)
+        return base64_part[1]
 
-    def decode_base64_authorization_header(self,
-                                           base64_authorization_header: str) -> str:
+    def decode_base64_authorization_header(
+        self, base64_authorization_header: str
+    ) -> str:
         """decode_base64_authorization_header that returns the
-        decoded value of a Base64 string base64_authorization_header"""
+        decoded value of a Base64 string"""
 
-        if base64_authorization_header is None or (type(base64_authorization_header) != str):
+        if base64_authorization_header is None or not isinstance(
+            base64_authorization_header, str
+        ):
             return None
         try:
-            decodeStr = base64.b64decode(base64_authorization_header)
-            print(decodeStr)
-            return decodeStr
+            decoded_string = base64.b64decode(base64_authorization_header)
+            decoded_string = decoded_string.decode("utf-8")
+            return decoded_string
 
-        except:
+        except Exception:
             return None
