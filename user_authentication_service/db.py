@@ -55,8 +55,9 @@ class DB:
         as passed in the method’s arguments then
         commit changes to the database."""
         user = self.find_user_by(id=user_id)
-        if user is None:
+        try:
+            user = self.find_user_by(id=user_id)
+            self._session.execute(update(User).values(kwargs))
+            self._session.commit()
+        except Exception:
             raise ValueError
-        self._session.execute(update(User).values(kwargs))
-        self._session.commit()
-        return None
